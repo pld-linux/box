@@ -1,0 +1,11 @@
+--- box-0.1.13/configure.in.orig	2010-01-13 19:24:20.000000000 +0100
++++ box-0.1.13/configure.in	2015-02-21 07:15:33.518734740 +0100
+@@ -35,7 +35,7 @@
+ AC_DEFINE_UNQUOTED(PACKAGE_LOCALSTATEDIR, "$LOCALSTATEDIR", "localstatedir desc")
+ AC_DEFINE_UNQUOTED(PACKAGE_LIBDIR, "$LIBDIR", "libdir desc")
+ 
+-CPPFLAGS="-Wall -Werror -Wcast-align -Wno-uninitialized"
++CPPFLAGS="$CPPFLAGS -Wall -Wcast-align -Wno-uninitialized"
+ 
+ AC_OUTPUT([
+ 	Makefile

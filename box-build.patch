@@ -1,0 +1,11 @@
+--- box-0.1.13/libinternal/libinternal-utils.c.orig	2008-10-29 19:31:05.000000000 +0100
++++ box-0.1.13/libinternal/libinternal-utils.c	2015-02-20 23:06:38.856632525 +0100
+@@ -12,7 +12,7 @@
+ void goption_error_func(GOptionContext *context, GOptionGroup *group, gpointer data, GError **error)
+ {
+     if (*error && (*error)->message) {
+-        gchar *progname = g_get_prgname();
++        const gchar *progname = g_get_prgname();
+         g_print("%s: %s\nTry '%s --help' for more information.\n", progname, (*error)->message, progname);
+         goption_show_error(context);
+         exit(1);
